@@ -11,7 +11,9 @@ Database: service_catalog
 ```
 
 # ServiceNow Rest API Explorer
-Get the count of stories and the story numbers for a particular release.
+[Encoded query strings documentation](https://docs.servicenow.com/bundle/london-platform-user-interface/page/use/using-lists/concept/c_EncodedQueryStrings.html)
+
+## Example: Count of story and story numbers for a release
 ```
 tableName: rm_story
 sysparm_query: release=e680xb95dbd9ecc4bd065055ca961918
