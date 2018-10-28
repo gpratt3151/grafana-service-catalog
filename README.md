@@ -11,6 +11,7 @@ Database: service_catalog
 ```
 
 # ServiceNow Rest API Explorer
+Get the count of stories and the story numbers for a particular release.
 ```
 tableName: rm_story
 sysparm_query: release=e680xb95dbd9ecc4bd065055ca961918
