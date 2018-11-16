@@ -5,14 +5,8 @@ BINDIR="${HOME}/bin"
 DELIMITER=';'
 
 # Data format
-#YYYY-MM-DD
-#Offset by a day so the graphs don't overlap
-#2018-10-04,items,created=.5
-#2018-10-05,items,total=.5
-#2018-10-11,items,created=7
-#2018-10-12,items,total=7
-#2018-10-18,items,created=11
-#2018-10-19,items,total=18
+# Semicolon separated values
+# YYYY-MM-DD;measurement;tag,tag;value
 
 # See if the database exists
 curl --silent -i -XPOST http://localhost:8086/query --data-urlencode "q=SHOW DATABASES"| grep -q service_catalog ; RC=$?
@@ -26,7 +20,7 @@ fi
 
 echo "Loading data..."
 #for i in $(cat /tmp/data.csv) $(cat /tmp/junk)
-for i in $(cat ntburndown.csv) $(cat overall.csv) $(cat esburndown.csv)
+for i in $(cat ntburndown.csv) $(cat overall.csv) $(cat esburndown.csv) $(cat iamburndown.csv) $(cat eusburndown.csv)
 do
   xTIMESTAMP=$(echo "${i}" | cut -f1 -d"${DELIMITER}")
   TIMESTAMP=$(date -d${xTIMESTAMP} +%s)
